@@ -1,0 +1,19 @@
+import React from 'react'
+import ProjectCart from './ProjectCart'
+import { projects } from '../data';
+import SectionTitle from './SectionTitle';
+
+const Projects = () => {
+    return (
+        <section className='align-elements py-20' id='projects'>
+            <SectionTitle text={'web creation'}/>
+            <div className='py-16 grid lg:grid-cols-2 xl:grid-cols-3 gap-8'>
+                {projects.map((project) => {
+                    return <ProjectCart key={project.id} {...project} />
+                })}
+            </div>
+        </section>
+    )
+}
+
+export default Projects
